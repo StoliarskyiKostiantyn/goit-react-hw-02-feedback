@@ -29,17 +29,20 @@ class App extends Component {
     return percentage.toFixed();
   };
   render() {
+    const totalFeedback = this.countTotalFeedback();
+    const positiveFeedback = this.countPositiveFeedbackPercentage();
+
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions state={this.state} onClick={this.handleClick}></FeedbackOptions>
+          <FeedbackOptions state={this.state} onClick={this.handleClick} />
         </Section>
         <Section title="Statistics">
           <Statistics
             state={this.state}
-            total={this.countTotalFeedback}
-            positivePercentage={this.countPositiveFeedbackPercentage}
-          ></Statistics>
+            total={totalFeedback}
+            positivePercentage={positiveFeedback}
+          />
         </Section>
       </>
     );

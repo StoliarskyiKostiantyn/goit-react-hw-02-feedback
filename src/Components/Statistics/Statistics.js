@@ -4,18 +4,18 @@ import Notification from './Notification';
 function Statistics({ state, total, positivePercentage }) {
   return (
     <>
-      {total() ? (
+      {total ? (
         <>
           {Object.keys(state).map(key => (
             <p key={key}>
               {key}: {state[key]}.
             </p>
           ))}
-          <p>Total: {total()}</p>
-          <p>Positive Percentage:{positivePercentage()}</p>
+          <p>Total: {total}</p>
+          <p>Positive Percentage:{positivePercentage}</p>
         </>
       ) : (
-        <Notification></Notification>
+        <Notification />
       )}
     </>
   );
